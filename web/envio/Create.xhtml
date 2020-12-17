@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EnvioCreateDlg" widgetVar="EnvioCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateEnvioTitle}">
+            <h:form id="EnvioCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{envioController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateEnvioLabel_guia}" for="guia" />
+                        <p:inputText id="guia" value="#{envioController.selected.guia}" title="#{bundle.CreateEnvioTitle_guia}" required="true" requiredMessage="#{bundle.CreateEnvioRequiredMessage_guia}"/>
+                        <p:outputLabel value="#{bundle.CreateEnvioLabel_contacto}" for="contacto" />
+                        <p:inputText id="contacto" value="#{envioController.selected.contacto}" title="#{bundle.CreateEnvioTitle_contacto}" required="true" requiredMessage="#{bundle.CreateEnvioRequiredMessage_contacto}"/>
+                        <p:outputLabel value="#{bundle.CreateEnvioLabel_telefono}" for="telefono" />
+                        <p:inputText id="telefono" value="#{envioController.selected.telefono}" title="#{bundle.CreateEnvioTitle_telefono}" required="true" requiredMessage="#{bundle.CreateEnvioRequiredMessage_telefono}"/>
+                        <p:outputLabel value="#{bundle.CreateEnvioLabel_calle}" for="calle" />
+                        <p:inputText id="calle" value="#{envioController.selected.calle}" title="#{bundle.CreateEnvioTitle_calle}" required="true" requiredMessage="#{bundle.CreateEnvioRequiredMessage_calle}"/>
+                        <p:outputLabel value="#{bundle.CreateEnvioLabel_cp}" for="cp" />
+                        <p:inputText id="cp" value="#{envioController.selected.cp}" title="#{bundle.CreateEnvioTitle_cp}" required="true" requiredMessage="#{bundle.CreateEnvioRequiredMessage_cp}"/>
+                        <p:outputLabel value="#{bundle.CreateEnvioLabel_numext}" for="numext" />
+                        <p:inputText id="numext" value="#{envioController.selected.numext}" title="#{bundle.CreateEnvioTitle_numext}" required="true" requiredMessage="#{bundle.CreateEnvioRequiredMessage_numext}"/>
+                        <p:outputLabel value="#{bundle.CreateEnvioLabel_colonia}" for="colonia" />
+                        <p:inputText id="colonia" value="#{envioController.selected.colonia}" title="#{bundle.CreateEnvioTitle_colonia}" required="true" requiredMessage="#{bundle.CreateEnvioRequiredMessage_colonia}"/>
+                        <p:outputLabel value="#{bundle.CreateEnvioLabel_idPais}" for="idPais" />
+                        <p:selectOneMenu id="idPais" value="#{envioController.selected.idPais}" required="true" requiredMessage="#{bundle.EditEnvioRequiredMessage_idPais}">
+                            <f:selectItems value="#{paisesController.itemsAvailableSelectOne}"
+                                           var="idPaisItem"
+                                           itemValue="#{idPaisItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateEnvioLabel_idEntidad}" for="idEntidad" />
+                        <p:selectOneMenu id="idEntidad" value="#{envioController.selected.idEntidad}" required="true" requiredMessage="#{bundle.EditEnvioRequiredMessage_idEntidad}">
+                            <f:selectItems value="#{entidadesController.itemsAvailableSelectOne}"
+                                           var="idEntidadItem"
+                                           itemValue="#{idEntidadItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateEnvioLabel_idMunicipio}" for="idMunicipio" />
+                        <p:selectOneMenu id="idMunicipio" value="#{envioController.selected.idMunicipio}" required="true" requiredMessage="#{bundle.EditEnvioRequiredMessage_idMunicipio}">
+                            <f:selectItems value="#{municipiosController.itemsAvailableSelectOne}"
+                                           var="idMunicipioItem"
+                                           itemValue="#{idMunicipioItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateEnvioLabel_idVenta}" for="idVenta" />
+                        <p:selectOneMenu id="idVenta" value="#{envioController.selected.idVenta}" >
+                            <f:selectItems value="#{ventasController.itemsAvailableSelectOne}"
+                                           var="idVentaItem"
+                                           itemValue="#{idVentaItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateEnvioLabel_idUsuario}" for="idUsuario" />
+                        <p:selectOneMenu id="idUsuario" value="#{envioController.selected.idUsuario}" >
+                            <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"
+                                           var="idUsuarioItem"
+                                           itemValue="#{idUsuarioItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{envioController.create}" value="#{bundle.Save}" update="display,:EnvioListForm:datalist,:growl" oncomplete="handleSubmit(args,'EnvioCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EnvioCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

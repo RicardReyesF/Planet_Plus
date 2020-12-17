@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="SeguimientoEditDlg" widgetVar="SeguimientoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditSeguimientoTitle}">
+            <h:form id="SeguimientoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{seguimientoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditSeguimientoLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{seguimientoController.selected.id}" title="#{bundle.EditSeguimientoTitle_id}" required="true" requiredMessage="#{bundle.EditSeguimientoRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.EditSeguimientoLabel_idPaqueteria}" for="idPaqueteria" />
+                        <p:selectOneMenu id="idPaqueteria" value="#{seguimientoController.selected.idPaqueteria}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{paqueteriaController.itemsAvailableSelectOne}"
+                                           var="idPaqueteriaItem"
+                                           itemValue="#{idPaqueteriaItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditSeguimientoLabel_guia}" for="guia" />
+                        <p:selectOneMenu id="guia" value="#{seguimientoController.selected.guia}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{envioController.itemsAvailableSelectOne}"
+                                           var="guiaItem"
+                                           itemValue="#{guiaItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{seguimientoController.update}" value="#{bundle.Save}" update="display,:SeguimientoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'SeguimientoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="SeguimientoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

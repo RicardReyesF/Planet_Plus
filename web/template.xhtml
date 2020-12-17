@@ -1,0 +1,387 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <!-- google fonts-->
+        <link href="//fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet"/>
+        <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+	    rel="stylesheet"/>
+        
+        
+        <title><ui:insert name="title">Planet_Plus</ui:insert></title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputScript library="js" name="jsfcrud.js"/>
+        <!--librerias css-->
+        <h:outputStylesheet  name="assets/css/bootstrap.css"/>
+        <h:outputStylesheet  name="assets/css/login_overlay.css"/>
+        <h:outputStylesheet  name="assets/css/style6.css"/>
+        <h:outputStylesheet  name="assets/css/shop.css"/>
+        <h:outputStylesheet  name="assets/css/owl.carousel.css"/>
+        <h:outputStylesheet  name="assets/css/owl.theme.css"/>
+        <h:outputStylesheet  name="assets/css/style.css"/>
+        <h:outputStylesheet  name="assets/css/fontawesome-all.css"/>
+        <h:outputStylesheet  name="assets/css/owl.theme.css"/>
+        <h:outputStylesheet  name="assets/css/simplyCountdown.css"/>
+        
+    </h:head>
+
+    <h:body>
+
+        <p:growl id="growl" life="3000" />
+        <!-- header -->
+        <header>
+            <div class="row">
+                <div class="col-md-3 top-info text-left mt-lg-4">
+                    <h6>Need Help</h6>
+                    <ul>
+                        <li>
+                            <i class="fas fa-phone"></i> Call</li>
+                        <li class="number-phone mt-3">12345678099</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 logo-w3layouts text-center">
+                    <h1 class="logo-w3layouts">
+                        <a class="navbar-brand" href="index.html">
+                            Goggles </a>
+                    </h1>
+                </div>
+
+                <div class="col-md-3 top-info-cart text-right mt-lg-4">
+                    <ul class="cart-inner-info">
+                        <li class="button-log">
+                            <a class="btn-open" href="#">
+                                <span class="fa fa-user" aria-hidden="true"></span>
+                            </a>
+                        </li>
+                        <li class="galssescart galssescart2 cart cart box_1">
+                                        </li>
+                                        </ul>
+                                        <!---->
+                                        <div class="overlay-login text-left">
+                                            <div class="wrap">
+                                                <h5 class="text-center mb-4">Login Now</h5>
+                                                <div class="login p-5 bg-dark mx-auto mw-100">
+                                                  
+                                                        <div class="form-group">
+                                                            <label class="mb-2">Email address</label>
+                                                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                                        </div>
+                                                        <div class="form-group">
+                            
+                                                        </div>
+                                                        <div class="form-check mb-2">
+                 
+                                                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <!---->
+                                        </div>
+                                        </div>
+                                        <div class="search">
+                                            <div class="mobile-nav-button">
+                                                <button id="trigger-overlay" type="button">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </div>
+                                            <!-- open/close -->
+                                            <div class="overlay overlay-door">
+                                                
+                                  
+
+                                            </div>
+                                            <!-- open/close -->
+                                        </div>
+                                        <label class="top-log mx-auto"></label>
+                                        <nav class="navbar navbar-expand-lg navbar-light bg-light top-header mb-2">
+                                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                                <ul class="navbar-nav nav-mega mx-auto">
+                                                    <li class="nav-item active">
+                                                        <a class="nav-link ml-lg-0" href="index.html">Home
+                                                            <span class="sr-only">(current)</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="about.html">About</a>
+                                                    </li>
+                                                    <li class="nav-item dropdown">
+                                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                           aria-expanded="false">
+                                                            Features
+                                                        </a>
+                                                        <ul class="dropdown-menu mega-menu ">
+                                                            <li>
+                                                                <div class="row">
+                                                                    <div class="col-md-4 media-list span4 text-left">
+                                                                        <h5 class="tittle-w3layouts-sub"> Tittle goes here </h5>
+                                                                        <ul>
+                                                                            <li class="media-mini mt-3">
+                                                                                <a href="shop.html">Designer Glasses</a>
+                                                                            </li>
+                                                                            <li class="">
+                                                                                <a href="shop.html"> Ray-Ban</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Prescription Glasses</a>
+                                                                            </li>
+                                                                            <li class="mt-3">
+                                                                                <h5>View more pages</h5>
+                                                                            </li>
+                                                                            <li class="mt-2">
+                                                                                <a href="about.html">About</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="customer.html">Customers</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-md-4 media-list span4 text-left">
+                                                                        <h5 class="tittle-w3layouts-sub"> Tittle goes here </h5>
+                                                                        <div class="media-mini mt-3">
+                                                                            <a href="shop.html">
+                                                                                <!--<img src="images/g2.jpg" class="img-fluid" alt="">-->
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 media-list span4 text-left">
+                                                                        <h5 class="tittle-w3layouts-sub">Tittle goes here </h5>
+                                                                        <div class="media-mini mt-3">
+                                                                            <a href="shop.html">
+                                                                               <!-- <img src="images/g3.jpg" class="img-fluid" alt="">-->
+                                                                            </a>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                            
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="nav-item dropdown">
+                                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                           aria-expanded="false">
+                                                            Shop
+                                                        </a>
+                                                        <ul class="dropdown-menu mega-menu ">
+                                                            <li>
+                                                                <div class="row">
+                                                                    <div class="col-md-4 media-list span4 text-left">
+                                                                        <h5 class="tittle-w3layouts-sub"> Tittle goes here </h5>
+                                                                        <ul>
+                                                                            <li class="media-mini mt-3">
+                                                                                <a href="shop.html">Designer Glasses</a>
+                                                                            </li>
+                                                                            <li class="">
+                                                                                <a href="shop.html"> Ray-Ban</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Prescription Glasses</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Rx Sunglasses</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Contact Lenses</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Multifocal Glasses</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Kids Glasses</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Lightweight Glasses</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Sports Glasses</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-md-4 media-list span4 text-left">
+                                                                        <h5 class="tittle-w3layouts-sub"> Tittle goes here </h5>
+                                                                        <ul>
+                                                                            <li class="media-mini mt-3">
+
+                                                                                <a href="shop.html">Brooks Brothers</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Persol</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Polo Ralph Lauren</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Prada</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Ray-Ban Jr</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Sferoflex</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <ul class="sub-in text-left">
+
+                                                                            <li>
+                                                                                <a href="shop.html">Polo Ralph Lauren</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Prada</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="shop.html">Ray-Ban Jr</a>
+                                                                            </li>
+                                                                        </ul>
+
+                                                                    </div>
+                                                                    <div class="col-md-4 media-list span4 text-left">
+
+                                                                        <h5 class="tittle-w3layouts-sub-nav">Tittle goes here </h5>
+                                                                        <div class="media-mini mt-3">
+                                                                            <a href="shop.html">
+                                                                                <!--<img src="images/g1.jpg" class="img-fluid" alt="">-->
+                                                                            </a>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="contact.html">Contact</a>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        </nav>
+                                        </header>
+                                        <p:layoutUnit position="center">
+                                            <ui:insert name="body"/>
+                                        </p:layoutUnit> 
+
+                                        <!--footer -->
+                                        <footer class="py-lg-5 py-3">
+                                            <div class="container-fluid px-lg-5 px-3">
+                                                <div class="row footer-top-w3layouts">
+                                                    <div class="col-lg-3 footer-grid-w3ls">
+                                                        <div class="footer-title">
+                                                            <h3>About Us</h3>
+                                                        </div>
+                                                        <div class="footer-text">
+                                                            <p>Curabitur non nulla sit amet nislinit tempus convallis quis ac lectus. lac inia eget consectetur sed, convallis at
+                                                                tellus. Nulla porttitor accumsana tincidunt.</p>
+                                                            <ul class="footer-social text-left mt-lg-4 mt-3">
+
+                                                                <li class="mx-2">
+                                                                    <a href="#">
+                                                                        <span class="fab fa-facebook-f"></span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="mx-2">
+                                                                    <a href="#">
+                                                                        <span class="fab fa-twitter"></span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="mx-2">
+                                                                    <a href="#">
+                                                                        <span class="fab fa-google-plus-g"></span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="mx-2">
+                                                                    <a href="#">
+                                                                        <span class="fab fa-linkedin-in"></span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="mx-2">
+                                                                    <a href="#">
+                                                                        <span class="fas fa-rss"></span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="mx-2">
+                                                                    <a href="#">
+                                                                        <span class="fab fa-vk"></span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 footer-grid-w3ls">
+                                                        <div class="footer-title">
+                                                            <h3>Get in touch</h3>
+                                                        </div>
+                                                        <div class="contact-info">
+                                                            <h4>Location :</h4>
+                                                            <p>0926k 4th block building, king Avenue, New York City.</p>
+                                                            <div class="phone">
+                                                                <h4>Contact :</h4>
+                                                                <p>Phone : +121 098 8907 9987</p>
+                                                                <p>Email :
+                                                                    <a href="mailto:info@example.com">info@example.com</a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 footer-grid-w3ls">
+                                                        <div class="footer-title">
+                                                            <h3>Quick Links</h3>
+                                                        </div>
+                                                        <ul class="links">
+                                                            <li>
+                                                                <a href="index.html">Home</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="about.html">About</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="404.html">Error</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="shop.html">Shop</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="contact.html">Contact Us</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-3 footer-grid-w3ls">
+                                                        <div class="footer-title">
+                                                            <h3>Sign up for your offers</h3>
+                                                        </div>
+                                                        <div class="footer-text">
+                                                            <p>By subscribing to our mailing list you will always get latest news and updates from us.</p>
+                               
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="copyright-w3layouts mt-4">
+                                                    <p class="copy-right text-center ">&copy; 2018 Goggles. All Rights Reserved | Design by
+                                                        <a href="http://w3layouts.com/"> W3layouts </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </footer>
+                                        <!-- //footer -->
+                                        
+                                        <h:outputScript name="assets/js/jquery-2.2.3.min.js"/>
+                                        <h:outputScript name="assets/js/modernizr-2.6.2.min.js"/>
+                                        <h:outputScript name="assets/js/classie-search.js"/>
+                                        <h:outputScript name="assets/js/demo1-search.js"/>
+                                        <h:outputScript name="assets/js/minicart.js"/>
+                                        <h:outputScript name="assets/js/simplyCountdown.js"/>
+                                        <h:outputScript name="assets/js/owl.carousel.js"/>
+                                        <h:outputScript name="assets/js/move-top.js"/>
+                                        <h:outputScript name="assets/js/easing.js"/>
+                                        <h:outputScript name="assets/js/bootstrap.js"/>
+                                        
+                                        </h:body>
+
+                                        </html>

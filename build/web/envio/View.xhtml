@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EnvioViewDlg" widgetVar="EnvioViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewEnvioTitle}">
+            <h:form id="EnvioViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{envioController.selected != null}">
+                        <h:outputText value="#{bundle.ViewEnvioLabel_guia}"/>
+                        <h:outputText value="#{envioController.selected.guia}" title="#{bundle.ViewEnvioTitle_guia}"/>
+                        <h:outputText value="#{bundle.ViewEnvioLabel_contacto}"/>
+                        <h:outputText value="#{envioController.selected.contacto}" title="#{bundle.ViewEnvioTitle_contacto}"/>
+                        <h:outputText value="#{bundle.ViewEnvioLabel_telefono}"/>
+                        <h:outputText value="#{envioController.selected.telefono}" title="#{bundle.ViewEnvioTitle_telefono}"/>
+                        <h:outputText value="#{bundle.ViewEnvioLabel_calle}"/>
+                        <h:outputText value="#{envioController.selected.calle}" title="#{bundle.ViewEnvioTitle_calle}"/>
+                        <h:outputText value="#{bundle.ViewEnvioLabel_cp}"/>
+                        <h:outputText value="#{envioController.selected.cp}" title="#{bundle.ViewEnvioTitle_cp}"/>
+                        <h:outputText value="#{bundle.ViewEnvioLabel_numext}"/>
+                        <h:outputText value="#{envioController.selected.numext}" title="#{bundle.ViewEnvioTitle_numext}"/>
+                        <h:outputText value="#{bundle.ViewEnvioLabel_colonia}"/>
+                        <h:outputText value="#{envioController.selected.colonia}" title="#{bundle.ViewEnvioTitle_colonia}"/>
+                        <h:outputText value="#{bundle.ViewEnvioLabel_idPais}"/>
+                        <h:outputText value="#{envioController.selected.idPais}" title="#{bundle.ViewEnvioTitle_idPais}"/>
+                        <h:outputText value="#{bundle.ViewEnvioLabel_idEntidad}"/>
+                        <h:outputText value="#{envioController.selected.idEntidad}" title="#{bundle.ViewEnvioTitle_idEntidad}"/>
+                        <h:outputText value="#{bundle.ViewEnvioLabel_idMunicipio}"/>
+                        <h:outputText value="#{envioController.selected.idMunicipio}" title="#{bundle.ViewEnvioTitle_idMunicipio}"/>
+                        <h:outputText value="#{bundle.ViewEnvioLabel_idVenta}"/>
+                        <h:outputText value="#{envioController.selected.idVenta}" title="#{bundle.ViewEnvioTitle_idVenta}"/>
+                        <h:outputText value="#{bundle.ViewEnvioLabel_idUsuario}"/>
+                        <h:outputText value="#{envioController.selected.idUsuario}" title="#{bundle.ViewEnvioTitle_idUsuario}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="EnvioViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

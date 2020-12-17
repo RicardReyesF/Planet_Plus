@@ -14,6 +14,7 @@
         </ui:define>
 
         <ui:define name="body">
+            <div class="container">|
             <h:form id="TiposusuarioListForm">
                 <p:panel header="#{bundle.ListTiposusuarioTitle}">
                     <p:dataTable id="datalist" value="#{tiposusuarioController.items}" var="item"
@@ -64,6 +65,7 @@
             <ui:include src="Create.xhtml"/>
             <ui:include src="Edit.xhtml"/>
             <ui:include src="View.xhtml"/>
+            </div>
         </ui:define>
     </ui:composition>
 

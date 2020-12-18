@@ -11,7 +11,7 @@ import modelo.Seguimiento;
 import modelo.Usuarios;
 import modelo.Ventas;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2020-12-17T14:19:51")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2020-12-17T23:44:09")
 @StaticMetamodel(Envio.class)
 public class Envio_ { 
 

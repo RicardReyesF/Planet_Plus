@@ -3,6 +3,12 @@ package control;
 import modelo.Fotosproductos;
 import control.util.JsfUtil;
 import control.util.JsfUtil.PersistAction;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,10 +19,12 @@ import javax.ejb.EJB;
 import javax.ejb.EJBException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import org.primefaces.model.UploadedFile;
 
 @Named("fotosproductosController")
 @SessionScoped
@@ -26,6 +34,8 @@ public class FotosproductosController implements Serializable {
     private control.FotosproductosFacade ejbFacade;
     private List<Fotosproductos> items = null;
     private Fotosproductos selected;
+    private UploadedFile foto;
+    private String aux;
 
     public FotosproductosController() {
     }
@@ -55,6 +65,8 @@ public class FotosproductosController implements Serializable {
     }
 
     public void create() {
+        selected.setStatus(1);
+        selected.setRuta(aux);
         persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle").getString("FotosproductosCreated"));
         if (!JsfUtil.isValidationFailed()) {
             items = null;    // Invalidate list of items to trigger re-query.
@@ -159,6 +171,97 @@ public class FotosproductosController implements Serializable {
             }
         }
 
+    }
+
+    /**
+     * @return the foto
+     */
+    public UploadedFile getFoto() {
+        return foto;
+    }
+
+    /**
+     * @param foto the foto to set
+     */
+    public void setFoto(UploadedFile foto) {
+        this.foto = foto;
+    }
+
+    /**
+     * @return the aux
+     */
+    public String getAux() {
+        return aux;
+    }
+
+    /**
+     * @param aux the aux to set
+     */
+    public void setAux(String aux) {
+        this.aux = aux;
+    }
+
+    public void Almacenafoto() {
+        System.out.println("MIME TIPE: " + getFoto().getContentType());
+        System.out.println("Tamaño: " + getFoto().getSize());
+        System.out.println("Extensión PNG " + getFoto().getFileName().endsWith(".png"));
+        System.out.println("Extensión JPG " + getFoto().getFileName().endsWith(".jpg"));
+        System.out.println("Extensión JPEG " + getFoto().getFileName().endsWith(".jpeg"));
+        System.out.println("Extensión GIF " + getFoto().getFileName().endsWith(".gif"));
+
+//        if (getFoto().getFileName().endsWith(".png")
+//                || getFoto().getFileName().endsWith(".jpg")
+//                || getFoto().getFileName().endsWith(".jpeg")
+//                || getFoto().getFileName().endsWith(".gif")) 
+//        {
+//            //insertar
+//            if (SubirArchivo()) {
+//                create();
+//                aux = "";
+//            }
+//        } else {
+//            FacesMessage mensaje = new FacesMessage("El archivo no es una imagen");
+//            FacesContext.getCurrentInstance().addMessage(null, mensaje);
+//            selected = null;
+//        }
+        if (SubirArchivo()) {
+            create();
+            aux = "";
+        }
+
+    }
+
+    public Boolean SubirArchivo() {
+        try {
+            aux = "resources/fotosproductos";
+            File archivo = new File(JsfUtil.getPath() + aux);
+            if (!archivo.exists()) {
+                archivo.mkdirs();
+            }
+            copiar_archivo(getFoto().getFileName(), getFoto().getInputstream());
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+
+    }
+
+    public void copiar_archivo(String nombre, InputStream in) throws FileNotFoundException {
+        aux = aux + "/" + nombre;
+        OutputStream out = new FileOutputStream(new File(JsfUtil.getPath() + aux));
+        int read = 0;
+        byte[] bytes = new byte[1024];
+        try {
+            while ((read = in.read(bytes)) != -1) {
+                out.write(bytes, 0, read);
+            }
+            aux = aux.substring(9);
+            in.close();
+            out.flush();
+            out.close();
+        } catch (IOException ex) {
+            Logger.getLogger(FotosproductosController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
